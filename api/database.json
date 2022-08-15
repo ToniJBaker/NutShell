@@ -1,0 +1,153 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "userName": "Wendell Breen",
+      "email": "BigDeal5@cityFace.com"
+    },
+    {
+      "id": 2,
+      "userName": "Yelena Ford",
+      "email": "YeYeFord@goInternetz.com"
+    },
+    {
+      "id": 3,
+      "userName": "Fallon Gregoire",
+      "email": "kittyBeans@hello.com"
+    },
+    {
+      "id": 4,
+      "userName": "Dion Stoade",
+      "email": "dstoade0@cornell.edu"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "userId": 1,
+      "task": "Take out garbage",
+      "completed": "true"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "task": "File existing client folders",
+      "completed": "false"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "task": "Clean bathroom",
+      "completed": "false"
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "task": "Reticulate splines",
+      "completed": "false"
+    },
+    {
+      "id": 5,
+      "userId": 4,
+      "task": "Air out hard-drive cache",
+      "completed": "true"
+    },
+    {
+      "id": 6,
+      "userId": 4,
+      "task": "Change CD-ROM",
+      "completed": "false"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": 1,
+      "url": "https://apnews.com/article/massachusetts-water-use-climate-and-environment-99b4ce46f3bb2fcf8fed277836c90caa",
+      "title": "Sewer emergency in Cape Cod resort town closes restaurant",
+      "synopsis": "Provincetown declared a sewer emergency"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "url": "https://www.quantamagazine.org/newfound-wormhole-allows-information-to-escape-black-holes-20171023/",
+      "title": "Wormholes Allow Information to Escape Black Holes",
+      "synopsis": "Check out this recent discovery about workholes"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "url": "https://arstechnica.com/science/2022/08/bacteria-fight-off-viruses-with-a-protein-like-one-of-ours/",
+      "title": "Bacteria fight off viruses with a protein like one of ours",
+      "synopsis": "Eukaryotes, archaea, and bacteria share a set of proteins that block many viruses."
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "url": "https://www.npr.org/2022/08/15/1117537458/fiona-the-hippo-little-brother-named-fritz",
+      "title": "Fiona the hippo's little brother has a name after a worldwide contest",
+      "synopsis": "After thousands of suggestions from across the world, the Cincinnati Zoo & Botanical Garden has named its baby hippo Fritz."
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "url": "https://www.npr.org/2022/08/15/1117489851/lawyers-for-basketball-star-brittney-griner-appeal-her-russian-prison-sentence",
+      "title": "Lawyers for basketball star Brittney Griner appeal her Russian prison sentence",
+      "synopsis": "Lawyers for American basketball star Brittney Griner on Monday filed an appeal against her nine-year Russian prison sentence for drug possession, Russian news agencies reported Monday."
+    },
+    {
+      "id": 6,
+      "userId": 2,
+      "url": "https://www.npr.org/2022/08/15/1117076598/drought-is-driving-elephants-closer-to-people-the-consequences-can-be-deadly",
+      "title": "Drought is driving elephants closer to people. The consequences can be deadly",
+      "synopsis": "The season of searing temperatures will soon begin in northwestern Zimbabwe as the chilly months fade away. But for the villagers of Silewad the return of summer, storms and a new planting season increase the risk of elephants invading their land."
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "userId": 4,
+      "name": "St. Mary's Gala",
+      "dateOf": "03/23/23",
+      "location": "Westfall Hose Company Event Space"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "name": "Apple Harvest Festival",
+      "dateOf": "10/17/22",
+      "location": "Enzo's Orchard"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "name": "Valentine's Fundraiser",
+      "dateOf": "02/14/23",
+      "location": "Broadmoore Arena"
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "name": "Hotdog Festival",
+      "dateOf": "06/08/23",
+      "location": "Pullman Square"
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "userId": 1,
+      "message": "What's up?"
+    },
+    {
+      "id": 2,
+      "userId": 3,
+      "message": "Hello there?"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "message": "Help Me!?"
+    }
+  ]
+}
