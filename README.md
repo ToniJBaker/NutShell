@@ -1,73 +1,70 @@
-# Nutshell: The Information Dashboard
+# Getting Started with Create React App
 
-You've been hired by a product company that builds productivity apps. For your first week on the job, you've been put on a team to build a new product called Nutshell. It's a one-stop dashboard for people to organize their daily tasks, events, news article, friends, and chat messages.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-You will be using all of the skills and concepts that you've learned up to this point in the course.
+## Available Scripts
 
-1. Functions
-1. Databases/API
-1. Github
-1. Objects
-1. CSS
-1. Handling user events
-1. Data entry/editing
-1. Modular code
-1. Relational data
+In the project directory, you can run:
 
-To start you off, here's an example of what the resources in your API should look like once it's populated with some data from your application.
+### `npm start`
 
-### Users
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-```json
-{ "id": 1, "username": "Steve", "email": "me@me.com" }
-```
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Messages
+### `npm test`
 
-```json
-{ "id": 1, "userId": 1, "message": "What's up?" }
-```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### News
+### `npm run build`
 
-```json
-{
-    "id": 1,
-    "userId": 2,
-    "url": "https://www.quantamagazine.org/newfound-wormhole-allows-information-to-escape-black-holes-20171023/",
-    "title": "Wormholes Allow Information to Escape Black Holes",
-    "synopsis": "Check out this recent discovery about workholes"
-}
-```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Friends
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-```json
-{ "id": 1, "userId": 1, "otherFriendId": 3 }
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Tasks
+### `npm run eject`
 
-```json
-{ "id": 1, "userId": 3, "task": "Take out garbage", "completed": "true" }
-```
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-## Professional Requirements
-1. Each module should have a comment at the top with the following info: authors and purpose of module
-1. The README for your project should include instructions on how another person can download and run the application
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## How to Handle Authentication
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You will be using session storage to keep track of which user has logged into Nutshell. When the user fills out the registration form, you will POST their username and password to the `users` collection in your API. You will then immediately take the `id` of the object in the response and save it to session storage.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-```js
-sessionStorage.setItem("activeUser", user.id)
-```
+## Learn More
 
-If you want to add a Logout feature, all you need to do it remove the session storage item.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-```js
-sessionStorage.removeItem("activeUser")
-```
+To learn React, check out the [React documentation](https://reactjs.org/).
 
+### Code Splitting
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
