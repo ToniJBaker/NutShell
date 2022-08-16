@@ -1,4 +1,5 @@
 import { Outlet, Route, Routes } from "react-router-dom"
+import { Events } from "../Events/Events"
 
 export const ApplicationViews = () => {
 	return (
@@ -13,7 +14,7 @@ export const ApplicationViews = () => {
             }>
 
                 <Route path="/articles" element={ <></> } /> 
-                <Route path="/events" element={ <></> } />
+                <Route path="/events" element={ <Events /> } />
                 <Route path="/messages" element={ <></> } />
                 
             </Route>

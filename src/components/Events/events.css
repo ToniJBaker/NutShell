@@ -1,0 +1,17 @@
+.events {
+    display: flex;
+    flex-direction: column;
+}
+.event {
+    background-color: rgb(243, 230, 255);
+    border: 1px dotted darkmagenta;
+    padding: 0.7rem;
+    margin: 0.5rem;
+}
+.event__footer {
+    border-top: 1px dotted darkmagenta;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
