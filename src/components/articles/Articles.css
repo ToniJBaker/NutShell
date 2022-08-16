@@ -8,6 +8,7 @@ h2 {
     display:flex;
     flex-wrap: wrap;
     
+    
 }
 .articles .article-each{
     border-style:solid;
@@ -22,3 +23,8 @@ h2 {
 .articles .article-each button{
     background-color: rgb(214, 181, 132);
    }
+.add-article {
+    border: 5px solid black;
+    padding: .5em;
+    transform:translatex(1013px) translatey(0px);
+}
