@@ -1,6 +1,7 @@
 import { Outlet, Route, Routes } from "react-router-dom"
 import { Articles } from "../articles/Articles"
 import { CreateArticle } from "../articles/CreateArticle"
+import { ModifyArticle } from "../articles/ModifyArticle"
 
 export const ApplicationViews = () => {
 	return (
@@ -15,7 +16,8 @@ export const ApplicationViews = () => {
             }/>
 
                 <Route path="/articles" element={ <Articles/> } />
-                <Route path="/articles/create" element={ <CreateArticle/>} /> 
+                <Route path="/articles/create" element={ <CreateArticle/>} />
+                <Route path="/articles/modify" element={ <ModifyArticle/>} />
                 <Route path="/events" element={ <></> } />
                 <Route path="/messages" element={ <></> } />
                 

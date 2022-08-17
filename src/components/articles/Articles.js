@@ -52,7 +52,7 @@ return (<>
                         <p className="card-url">URL:  {article.url}</p>
                         <p className="card-synopsis">Synopsis:  {article.synopsis}</p>
                         {/* <p className="card-time">Time Stamp:  {article.timestamp}</p> */}
-                        <button className="modify">Modify</button>
+                        <button className="modify" onClick={()=> navigate("/articles/modify")}>Modify</button>
                         {deleteButton(article)}
                         
                         </div>
