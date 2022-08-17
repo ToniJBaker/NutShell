@@ -11,7 +11,7 @@ export const CreateArticle = () => {
         url: "",
         title: "",
         synopsis: "",
-        timestamp: ""
+        timestamp: 0
     })
     const navigate = useNavigate()
     
@@ -21,7 +21,8 @@ export const CreateArticle = () => {
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
         
-        let date = new Date().toUTCString().slice(0,16)//today's date
+        // let date = new Date().toUTCString().slice(0,16)//today's date
+        let date =  Date.now()
         
         const articleToSendToAPI = {
             userId: nutshellUserObject.id,
@@ -96,7 +97,7 @@ export const CreateArticle = () => {
             <button
             onClick ={(clickEvent) => handleSaveButtonClick(clickEvent)}
             className="btn btn-primary">
-                Submit Article
+                Save Article
             </button>
     
     </>

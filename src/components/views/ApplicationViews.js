@@ -14,9 +14,9 @@ export const ApplicationViews = () => {
                     <h1>Nutshell</h1>
                     <div>Your one-stop dashboard for all your stuff</div>
 
-                    <Outlet />
+                    
                 </>
-            }>
+            }/>
 
                 <Route path="/articles" element={ <Articles/> } />
                 <Route path="/articles/create" element={ <CreateArticle/>} /> 
@@ -24,7 +24,7 @@ export const ApplicationViews = () => {
                 <Route path="/messages" element={ <MessageList/>} />
                 
                 
-            </Route>
+            
         </Routes>
     )
 }
