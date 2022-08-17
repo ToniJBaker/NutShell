@@ -96,7 +96,7 @@ export const CreateArticle = () => {
             <button
             onClick ={(clickEvent) => handleSaveButtonClick(clickEvent)}
             className="btn btn-primary">
-                Submit Article
+                Save Article
             </button>
     
     </>
