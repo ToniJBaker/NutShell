@@ -3,6 +3,9 @@ import { TaskForm } from "../tasks/TaskForm"
 import { TaskList } from "../tasks/TaskList"
 import { Articles } from "../articles/Articles"
 import { CreateArticle } from "../articles/CreateArticle"
+import { MessageList } from "../messages/MessageList"
+
+
 
 export const ApplicationViews = () => {
 	return (
