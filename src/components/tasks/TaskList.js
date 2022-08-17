@@ -51,19 +51,19 @@ export const TaskList = () => {
             <h3>Task List</h3>
             {
                 tasks.map(task => {
-
+                if (task.completed === false) {
                     return (
                         <section className="task" key={`task--${task.id}`}>
-                            <div className="task__title">Task {task.id}</div>
                             <div className="task__description">{task.description}</div>
                             <div className="task__date">Complete by: {parseIsoDate(task.expectedDate)}</div>
-                            <div className="task__completed">Completed: {task.completed ? "✅"
-                                : <input onChange={(e) => setComplete(e, task)}
+                            <div className="task__completed">Completed: <input onChange={(e) => setComplete(e, task)}
                                 type="checkbox" id="completed" />
-                            }
+                            
                             </div>
                         </section>
                     )
+                    
+                }
                 })
             }
             <button className="tasks__new--button" onClick={() => navigate("/tasks/create")}>New Task</button>
