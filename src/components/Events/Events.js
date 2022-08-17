@@ -9,16 +9,18 @@
 
 
 import React, { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { fetchEvents, getLoggedInUser } from "../ApiManger"
 import { Event as AppEvent} from "./Event"
 import "./events.css"
  
- export const Events = () => {
+export const Events = () => {
+
     const [events, setEvents] = useState([])
 
     const nutshellUserObject = getLoggedInUser()
-
-    const getAllEvents = () => {
+    const navigate = useNavigate()
+    const getEvents = () => {
         fetchEvents(`?userId=${nutshellUserObject.id}`)
             .then( events => {
                 setEvents(events)
@@ -28,12 +30,14 @@ import "./events.css"
 
     useEffect(
         () => {
-            getAllEvents()
+            getEvents()
         },
         []
     )
-     return <>
-                <h2 className="event-list__header"> Events </h2>
-                {events.map((event) => <AppEvent key={`app-event--${event.id}`} event={event} />)}
-            </>
- }
+
+    return <>
+            <button onClick={() => navigate("/event/create")}>Add Event</button>
+            <h2 className="event-list__header">Events</h2>
+            {events.map((event) => <AppEvent key={`app-event--${event.id}`} event={event} />)}
+    </>
+}
