@@ -1,5 +1,5 @@
 import { Outlet, Route, Routes } from "react-router-dom"
-import { MessageForm } from "../messages/MessageForm"
+
 import { MessageList } from "../messages/MessageList"
 
 
@@ -19,7 +19,7 @@ export const ApplicationViews = () => {
                 <Route path="/articles" element={ <></> } /> 
                 <Route path="/events" element={ <></> } />
                 <Route path="/messages" element={ <MessageList/>} />
-                <Route path="/message/create" element={ <MessageForm/>}/>
+                
                 
             </Route>
         </Routes>
