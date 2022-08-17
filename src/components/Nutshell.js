@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import { ApplicationViews } from "../views/ApplicationViews"
+import { ApplicationViews } from "./views/ApplicationViews"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { Navbar } from "./nav/Navbar"
@@ -17,7 +17,7 @@ export const Nutshell = () => {
 			
 					<Navbar />
 					<ApplicationViews />
-         
+					         
 			</Authorized>
 		} />
 	</Routes>
