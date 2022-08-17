@@ -5,7 +5,6 @@ import { fetchArticles, deleteOption } from "../ApiManger.js"
 
 export const Articles = () => {
     const [articles, setArticles] = useState([])
-    const [filteredArticles, setFilteredArticles] = useState([])
     const navigate = useNavigate()
     
     const localNutshellUser = localStorage.getItem("nutshell_user")
@@ -21,15 +20,20 @@ useEffect (
     []
   ) 
   
-//   useEffect =(
-//     ()=> {
-//     const myArticles = () => {
-//     articles.filter((article)=>{article.userId === nutshellUserObject.id})
-//     setFilteredArticles(myArticles)
-//     }
-//     },
-//     [articles] 
-// )
+const deleteButton = (article) => {
+    if(nutshellUserObject.id === article.userId){
+        return <button onClick={()=>{
+            
+            fetchArticles(`/${article.id}`, deleteOption())
+            .then (()=>{
+                fetchArticles( )
+                    .then((articlesData)=> {
+                    setArticles(articlesData)
+                })
+            })
+        }} className="ticket__delete">Delete</button> 
+    }
+} 
  
 return (<>
     <h2>Articles</h2>
@@ -45,8 +49,9 @@ return (<>
                         <p className="card-synopsis">Synopsis:  {article.synopsis}</p>
                         <p className="card-time">Time Stamp:  {article.timestamp}</p>
                         <button className="modify">Modify</button>
-                        <button className="delete">Delete</button>
-                    </div>
+                        {deleteButton(article)}
+                        
+                        </div>
                 
                     :<div className="article-each" key={article.id}>
                         <h3 className="header">Article</h3> 
