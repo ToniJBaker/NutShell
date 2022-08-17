@@ -10,16 +10,16 @@ export const ApplicationViews = () => {
                     <h1>Nutshell</h1>
                     <div>Your one-stop dashboard for all your stuff</div>
 
-                    <Outlet />
+                    
                 </>
-            }>
+            }/>
 
                 <Route path="/articles" element={ <Articles/> } />
                 <Route path="/articles/create" element={ <CreateArticle/>} /> 
                 <Route path="/events" element={ <></> } />
                 <Route path="/messages" element={ <></> } />
                 
-            </Route>
+            
         </Routes>
     )
 }

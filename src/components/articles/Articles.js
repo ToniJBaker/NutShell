@@ -12,11 +12,12 @@ export const Articles = () => {
 
 useEffect (
     ()=> {
-        fetchArticles() //fetch call to get articles
-        .then((articlesData)=> {
-            setArticles(articlesData)
-        })
-    },
+        fetchArticles() //fetch call to get articles and sort by descending timestamp
+        .then((articlesData)=>{
+            const sortedByTimestamp = articlesData.sort((objA, objB) => (objB.timestamp) - (objA.timestamp))
+            setArticles(sortedByTimestamp)
+            })
+        },
     []
   ) 
   
@@ -34,20 +35,23 @@ const deleteButton = (article) => {
         }} className="ticket__delete">Delete</button> 
     }
 } 
+
+
  
 return (<>
     <h2>Articles</h2>
         <section className="articles">
             {
             articles.map((article)=> ( //articles display: title, url, synopsis...  with modify & delete button if belong to current user.
+            
             <>
                {article.userId === nutshellUserObject.id 
                     ?<div className="article-each" key={article.id}>
                         <h3 className="header">Article</h3> 
-                        <p class="card-title">Title:  {article.title}</p>
+                        <p className="card-title">Title:  {article.title}</p>
                         <p className="card-url">URL:  {article.url}</p>
                         <p className="card-synopsis">Synopsis:  {article.synopsis}</p>
-                        <p className="card-time">Time Stamp:  {article.timestamp}</p>
+                        {/* <p className="card-time">Time Stamp:  {article.timestamp}</p> */}
                         <button className="modify">Modify</button>
                         {deleteButton(article)}
                         
@@ -55,10 +59,10 @@ return (<>
                 
                     :<div className="article-each" key={article.id}>
                         <h3 className="header">Article</h3> 
-                        <p class="card-title">Title:  {article.title}</p>
+                        <p className="card-title">Title:  {article.title}</p>
                         <p className="card-url">URL:  {article.url}</p>
                         <p className="card-synopsis">Synopsis:  {article.synopsis}</p>
-                        <p className="card-time">Time Stamp:  {article.timestamp}</p>
+                        {/* <p className="card-time">Time Stamp:  {article.timestamp}</p> */}
                     </div>
                 }
             </>
