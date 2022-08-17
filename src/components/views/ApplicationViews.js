@@ -3,6 +3,10 @@ import { Articles } from "../articles/Articles"
 import { CreateArticle } from "../articles/CreateArticle"
 import { ModifyArticle } from "../articles/ModifyArticle"
 
+import { MessageList } from "../messages/MessageList"
+
+
+
 export const ApplicationViews = () => {
 	return (
         <Routes>
@@ -19,7 +23,8 @@ export const ApplicationViews = () => {
                 <Route path="/articles/create" element={ <CreateArticle/>} />
                 <Route path="/articles/modify" element={ <ModifyArticle/>} />
                 <Route path="/events" element={ <></> } />
-                <Route path="/messages" element={ <></> } />
+                <Route path="/messages" element={ <MessageList/>} />
+                
                 
             
         </Routes>
