@@ -3,6 +3,13 @@
     flex-direction: column;
 }
 
+.tasks__header {
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
 .task {
     background-color: beige;
     border: 1px dotted burlywood;
@@ -10,16 +17,17 @@
     margin: .5rem 0;
 }
 
-.task-header {
+.task__title {
     font-size: 1.1em;
-    font-weight: 500;
+    font-weight: 600;
 }
 
-.task-complete--button {
-    margin-left: 1rem;
+.tasks__new--button {
+    width: 30%;
+    height: 1.75rem;
 }
 
-.task-delete--button {
+.task__delete--button {
     margin-top: .3rem;
     background-color: rgb(175, 49, 49);
     color: bisque;
