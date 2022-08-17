@@ -17,7 +17,7 @@ export const Nutshell = () => {
 			
 					<Navbar />
 					<ApplicationViews />
-         
+					         
 			</Authorized>
 		} />
 	</Routes>
