@@ -2,6 +2,10 @@ import { Outlet, Route, Routes } from "react-router-dom"
 import { Articles } from "../articles/Articles"
 import { CreateArticle } from "../articles/CreateArticle"
 
+import { MessageList } from "../messages/MessageList"
+
+
+
 export const ApplicationViews = () => {
 	return (
         <Routes>
@@ -17,7 +21,8 @@ export const ApplicationViews = () => {
                 <Route path="/articles" element={ <Articles/> } />
                 <Route path="/articles/create" element={ <CreateArticle/>} /> 
                 <Route path="/events" element={ <></> } />
-                <Route path="/messages" element={ <></> } />
+                <Route path="/messages" element={ <MessageList/>} />
+                
                 
             
         </Routes>
