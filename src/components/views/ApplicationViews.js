@@ -1,6 +1,9 @@
 import { Route, Routes } from "react-router-dom"
 import { TaskForm } from "../tasks/TaskForm"
 import { TaskList } from "../tasks/TaskList"
+import { EventForm } from "../Events/EventForm"
+import { Events } from "../Events/Events"
+
 import { Articles } from "../articles/Articles"
 import { CreateArticle } from "../articles/CreateArticle"
 import { MessageList } from "../messages/MessageList"
@@ -19,11 +22,16 @@ export const ApplicationViews = () => {
                 </>
             } />
 
+
+                <Route path="/events" element={ <Events /> } />
+                <Route path="/event/create" element={ <EventForm /> } />
                 <Route path="/articles" element={ <Articles/> } />
                 <Route path="/articles/create" element={ <CreateArticle/>} /> 
-                <Route path="/events" element={ <></> } />
+
+                
                 <Route path="/messages" element={ <MessageList /> } />
                 <Route path="/tasks/create" element={ <TaskForm /> } />
+                <Route path="/messages" element={ <MessageList/>} />
                 
         </Routes>
     )
