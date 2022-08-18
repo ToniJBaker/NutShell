@@ -1,4 +1,6 @@
-import { Outlet, Route, Routes } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
+import { EventForm } from "../Events/EventForm"
+import { Events } from "../Events/Events"
 import { Articles } from "../articles/Articles"
 import { CreateArticle } from "../articles/CreateArticle"
 
@@ -18,9 +20,11 @@ export const ApplicationViews = () => {
                 </>
             }/>
 
+
+                <Route path="/events" element={ <Events /> } />
+                <Route path="/event/create" element={ <EventForm /> } />
                 <Route path="/articles" element={ <Articles/> } />
                 <Route path="/articles/create" element={ <CreateArticle/>} /> 
-                <Route path="/events" element={ <></> } />
                 <Route path="/messages" element={ <MessageList/>} />
                 
                 
