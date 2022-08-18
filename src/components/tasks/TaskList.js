@@ -1,23 +1,25 @@
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
 import { fetchTasks, putOption } from "../ApiManger.js"
+import { TaskForm } from "./TaskForm.js"
 import "./Tasks.css"
 
-//Component module to display list of tasks and relevant links to create or modify tasks.
-//Authored by Shane
+//Component module displays list of tasks and relevant links to create or modify tasks.
+//Authored by Shane Butler
 
 export const TaskList = () => {
 
-    const navigate = useNavigate()
+    //Get local user object to fetch tasks by userId
+    const localNutshellUser = localStorage.getItem("nutshell_user")
+    const nutshellUserObject = JSON.parse(localNutshellUser)
 
     const [tasks, setTasks] = useState([])
 
     const fetchAllTasks = () => {
-        fetchTasks()
+        fetchTasks(`?_expand=user&userId=${nutshellUserObject.id}`)
         .then(tasksArray => setTasks(tasksArray))
     }
 
-    //getTasks from API and set the response tasks array to the useState tasks variable
+    //Get fetch tasks from API and set the response to the useState tasks variable
     useEffect(() => {
         fetchAllTasks()
     }, [])
@@ -46,6 +48,18 @@ export const TaskList = () => {
         }
     }
 
+    //State to handle toggle state
+    const [showTaskForm, setShowTaskForm] = useState(false)
+    
+    //Click toggle the task form, see ternary statement between button element
+    const toggleTaskForm = (showTaskForm) => {
+        if (showTaskForm) {
+            setShowTaskForm(false)
+        } else {
+            setShowTaskForm(true)
+        }
+    }
+
     return (
         <article className="tasks">
             <h3>Task List</h3>
@@ -58,15 +72,15 @@ export const TaskList = () => {
                             <div className="task__date">Complete by: {parseIsoDate(task.expectedDate)}</div>
                             <div className="task__completed">Completed: <input onChange={(e) => setComplete(e, task)}
                                 type="checkbox" id="completed" />
-                            
                             </div>
                         </section>
                     )
-                    
                 }
                 })
             }
-            <button className="tasks__new--button" onClick={() => navigate("/tasks/create")}>New Task</button>
+            <button className="tasks__new--button" onClick={() => toggleTaskForm(showTaskForm)}>{showTaskForm ? "Hide Form" : "New Task"}</button>
+            {showTaskForm ? <TaskForm localUserId={nutshellUserObject.id} getTasks={fetchAllTasks} /> : null}
         </article>
     )
 }
+    
