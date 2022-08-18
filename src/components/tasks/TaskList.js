@@ -62,24 +62,23 @@ export const TaskList = () => {
 
     return (
         <article className="tasks">
-            <h3>Task List</h3>
+            <h2>Tasks</h2>
+            <button className="tasks__new--button" onClick={() => toggleTaskForm(showTaskForm)}>{showTaskForm ? "Hide Form" : "New Task"}</button>
+            {showTaskForm ? <TaskForm localUserId={nutshellUserObject.id} getTasks={fetchAllTasks} /> : null}
             {
                 tasks.map(task => {
                 if (task.completed === false) {
                     return (
                         <section className="task" key={`task--${task.id}`}>
-                            <div className="task__description">{task.description}</div>
+                      
+                            <div className="task__description"><input onChange={(e) => setComplete(e, task)}
+                                type="checkbox" id="completed" /> {task.description}</div>
                             <div className="task__date">Complete by: {parseIsoDate(task.expectedDate)}</div>
-                            <div className="task__completed">Completed: <input onChange={(e) => setComplete(e, task)}
-                                type="checkbox" id="completed" />
-                            </div>
                         </section>
                     )
                 }
                 })
             }
-            <button className="tasks__new--button" onClick={() => toggleTaskForm(showTaskForm)}>{showTaskForm ? "Hide Form" : "New Task"}</button>
-            {showTaskForm ? <TaskForm localUserId={nutshellUserObject.id} getTasks={fetchAllTasks} /> : null}
         </article>
     )
 }
