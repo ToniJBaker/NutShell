@@ -7,28 +7,24 @@
  */
 
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import { fetchEvents, getLoggedInUser, postOption } from "../ApiManger"
 
 
 
-export const EventForm = (edit) => {
+export const EventForm = ({props}) => {
     const [appEvent, update] = useState({
         userId: getLoggedInUser().id,
         name: "",
-        dateOf: "Year-Month-Day",
+        dateOf: "",
         location: ""
     })
 
     const navigate = useNavigate()
+    const location = useLocation()
 
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
-
-        // const now = new Date()
-        // const month = now.getMonth() + 1
-        // const day = now.getDate()
-        // const year = now.getFullYear()
 
         const eventToSendtoAPI = {
             userId: getLoggedInUser().id,
@@ -57,7 +53,7 @@ export const EventForm = (edit) => {
         return dateString
         
     }
-
+    console.log(location)
     return (
         <form className="eventForm">
             <h2 className="eventForm__title">New Event</h2>

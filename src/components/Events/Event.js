@@ -17,7 +17,7 @@ export const Event = ( {event} ) => {
         <section className="event">
             <header>
                 {
-                    <Link to={`/events/${event.id}/edit`}><h3>{event.name}</h3></Link>
+                    <Link to={`/events/${event.id}/edit`} state={ event }><h3>{event.name}</h3></Link>
                 }
             </header>
             <section>
