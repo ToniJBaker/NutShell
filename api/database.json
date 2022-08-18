@@ -25,38 +25,44 @@
     {
       "id": 1,
       "userId": 1,
-      "task": "Take out garbage",
-      "completed": "true"
+      "description": "Take out garbage",
+      "expectedDate": "2022-08-11T00:00:00.000Z",
+      "completed": true
     },
     {
       "id": 2,
       "userId": 2,
-      "task": "File existing client folders",
-      "completed": "false"
+      "description": "File existing client folders",
+      "expectedDate": "2022-12-26T00:00:00.000Z",
+      "completed": false
     },
     {
       "id": 3,
       "userId": 3,
-      "task": "Clean bathroom",
-      "completed": "false"
+      "description": "Clean bathroom",
+      "expectedDate": "2022-11-30T00:00:00.000Z",
+      "completed": false
     },
     {
       "id": 4,
       "userId": 2,
-      "task": "Reticulate splines",
-      "completed": "false"
+      "description": "Reticulate splines",
+      "expectedDate": "2022-12-19T00:00:00.000Z",
+      "completed": false
     },
     {
       "id": 5,
       "userId": 4,
-      "task": "Air out hard-drive cache",
-      "completed": "true"
+      "description": "Air out hard-drive cache",
+      "expectedDate": "2022-05-13T00:00:00.000Z",
+      "completed": true
     },
     {
       "id": 6,
       "userId": 4,
-      "task": "Change CD-ROM",
-      "completed": "false"
+      "description": "Change CD-ROM",
+      "expectedDate": "2022-10-17T00:00:00.000Z",
+      "completed": false
     }
   ],
   "articles": [
