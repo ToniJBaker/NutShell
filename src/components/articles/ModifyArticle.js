@@ -1,97 +1,60 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
+import { useEffect, useState } from "react"
 import "./Articles.css"
-
-
+import { fetchArticles, putOption } from "../ApiManger"
 
 export const ModifyArticle = () => {
     
     const navigate = useNavigate()
-    const localNutshellUser = localStorage.getItem("nutshell_user")
-    const nutshellUserObject = JSON.parse(localNutshellUser)
+    const { articleId } = useParams()
+    const [article, updateArticle] = useState({
+        userId: 0,
+        url: "",
+        title: "",
+        synopsis:"",
+        timestamp:0
+    })
 
-    const [article, updateArticle] = useState({})
+    
+    useEffect(
+        ()=>{
+            fetchArticles(`/${articleId}`)
+            .then ((articleFromAPI) =>{
+                updateArticle(articleFromAPI)
+            })
+        },
+        [articleId],
+    )
     
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
+
+       // TODO: Write the fetch for the PUT request to replace the object being edited
+        // return fetch(`http://localhost:8088/articles/${articleId}`, {
+        //     method: "PUT",
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     },
+        //     body: JSON.stringify(article)
+        // } )
+
+        fetchArticles(`/${articleId}`, putOption(article))
+        .then(response => response.json())
+        .then(()=> {
+            navigate("/articles")
+        })
         
-        // let date = new Date().toUTCString().slice(0,16)//today's date
-        let date =  Date.now()
-        
-        const articleToSendToAPI = {
-            userId: nutshellUserObject.id,
-            url: article.url,
-            title: article.title,
-            synopsis: article.synopsis,
-            timestamp: date
-       }
-       fetchArticles("", putOption(articleToSendToAPI))
-       .then(()=> {
-        navigate("/articles")
-    }) 
     }
-    
+     
     return (
     <>
         <h2>Modify Article</h2>
-        <fieldset>
-                <div className="form-group">
-                    <label htmlFor="createURL">URL</label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        placeholder="Enter URL of Article Here"
-                        value={article.url}
-                        onChange={
-                            (evt)=> {
-                               const copy = {...article} 
-                               copy.url = evt.target.value
-                               createArticle(copy)
-                            }
-                        } />
-                </div>
-            </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="createTitle">Title</label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        placeholder="Enter Title of Article Here"
-                        value={article.title}
-                        onChange={
-                            (evt)=> {
-                               const copy = {...article} 
-                               copy.title = evt.target.value
-                               createArticle(copy)
-                            }
-                        } />
-                </div>
-            </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="createSynopsis">Synopsis</label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        placeholder="Enter Synopsis of Article Here"
-                        value={article.synopsis}
-                        onChange={
-                            (evt)=> {
-                               const copy = {...article} 
-                               copy.synopsis = evt.target.value
-                               createArticle(copy)
-                            }
-                        } />
-                </div>
-            </fieldset>
-            <button
-            onClick ={(clickEvent) => handleSaveButtonClick(clickEvent)}
+        
+        <button
+            onClick={(changeEvent) => handleSaveButtonClick(changeEvent)}
             className="btn btn-primary">
-                Save Article
-            </button>
+            Save Changes
+        </button>
     </>
     )
 }

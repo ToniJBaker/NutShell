@@ -25,7 +25,7 @@ const deleteButton = (article) => {
     if(nutshellUserObject.id === article.userId){
         return <button onClick={()=>{
             
-            fetchArticles(`/${article.id}`, deleteOption())
+            fetchArticles(`/${article.id}`, deleteOption()) //fetch call with DELETE option
             .then (()=>{
                 fetchArticles( )
                     .then((articlesData)=> {
