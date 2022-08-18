@@ -17,8 +17,12 @@
     margin: .5rem 0;
 }
 
-.task__description {
+.task__header {
     font-size: 1.1em;
+}
+
+.task__description {
+    display: inline;
     font-weight: 600;
 }
 
