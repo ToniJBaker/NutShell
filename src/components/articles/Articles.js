@@ -41,6 +41,7 @@ const deleteButton = (article) => {
 return (<>
     <h2>Articles</h2>
         <section className="articles">
+            
             {
             articles.map((article)=> ( //articles display: title, url, synopsis...  with modify & delete button if belong to current user.
             

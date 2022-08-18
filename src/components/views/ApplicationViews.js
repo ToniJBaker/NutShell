@@ -30,7 +30,7 @@ export const ApplicationViews = () => {
                 <Route path="/articles" element={ <Articles/> } />
                 <Route path="/articles/create" element={ <CreateArticle/>} />
                 <Route path="/articles/:articleId/modify" element={ <ModifyArticle/>} />
-                <Route path="/tasks/create" element={ <TaskForm /> } />
+                
                 <Route path="/messages" element={ <MessageList/>} />
                 
         </Routes>
