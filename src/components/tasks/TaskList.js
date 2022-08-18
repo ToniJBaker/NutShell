@@ -43,6 +43,7 @@ export const TaskList = () => {
         if (event.target.checked === true) {
             const taskCopy = { ...task }
             taskCopy.completed = true
+            delete taskCopy.user
             fetchTasks(`/${taskCopy.id}`, putOption(taskCopy))
             .then(fetchAllTasks)
         }
