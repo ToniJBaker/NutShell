@@ -21,13 +21,10 @@ export const ApplicationViews = () => {
             }/>
 
 
-                <Route path="/articles" element={ <></> } /> 
                 <Route path="/events" element={ <Events /> } />
                 <Route path="/event/create" element={ <EventForm /> } />
-                <Route path="/messages" element={ <></> } />
                 <Route path="/articles" element={ <Articles/> } />
                 <Route path="/articles/create" element={ <CreateArticle/>} /> 
-                <Route path="/events" element={ <></> } />
                 <Route path="/messages" element={ <MessageList/>} />
                 
                 
