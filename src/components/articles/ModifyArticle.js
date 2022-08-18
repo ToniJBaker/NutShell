@@ -16,32 +16,21 @@ export const ModifyArticle = () => {
     })
 
     
-    useEffect(
+    useEffect( 
         ()=>{
-            fetchArticles(`/${articleId}`)
+            fetchArticles(`/${articleId}`) //fetch call
             .then ((articleFromAPI) =>{
                 updateArticle(articleFromAPI)
             })
         },
-        [articleId],
+        [],
     )
     
-    const handleSaveButtonClick = (event) => {
+    const handleSaveButtonClick = (event) => { //function to save the modified article
         event.preventDefault()
-
-       // TODO: Write the fetch for the PUT request to replace the object being edited
-        // return fetch(`http://localhost:8088/articles/${articleId}`, {
-        //     method: "PUT",
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     },
-        //     body: JSON.stringify(article)
-        // } )
-
-        fetchArticles(`/${articleId}`, putOption(article))
-        .then(response => response.json())
+        fetchArticles(`/${articleId}`, putOption(article))  //fetch call with PUT option
         .then(()=> {
-            navigate("/articles")
+            navigate("/articles") //return to articles
         })
         
     }
@@ -49,6 +38,61 @@ export const ModifyArticle = () => {
     return (
     <>
         <h2>Modify Article</h2>
+        <fieldset>
+                <div className="form-group">
+                    <label htmlFor="createTitle">Title</label>
+                    <input
+                        required autoFocus
+                        type="text"
+                        className="form-control"
+                        value={article.title}
+                        onChange={
+                            (evt)=> {
+                               const copy = {...article} 
+                               copy.title = evt.target.value
+                               updateArticle(copy)
+                            }
+                        } />
+                </div>
+            </fieldset>
+            <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="createURL">URL</label>
+                        <input
+                            required autoFocus
+                            type="text"
+                            className="form-control"
+                            
+                            value={article.url}
+                            onChange={
+                                (evt)=> {
+                                const copy = {...article} 
+                                copy.url = evt.target.value
+                                updateArticle(copy)
+                                }
+                            } />
+                    </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="createSynopsis">Synopsis</label>
+                    <input
+                        required autoFocus
+                        type="text"
+                        className="form-control"
+                        placeholder="Enter Synopsis of Article Here"
+                        value={article.synopsis}
+                        onChange={
+                            (evt)=> {
+                               const copy = {...article} 
+                               copy.synopsis = evt.target.value
+                               updateArticle(copy)
+                            }
+                        } />
+                </div>
+            </fieldset>
+
+            
         
         <button
             onClick={(changeEvent) => handleSaveButtonClick(changeEvent)}

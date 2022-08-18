@@ -52,10 +52,10 @@ return (<>
                         <p className="card-url">URL:  {article.url}</p>
                         <p className="card-synopsis">Synopsis:  {article.synopsis}</p>
                         {/* <p className="card-time">Time Stamp:  {article.timestamp}</p> */}
-                        <button className="modify" onClick={()=> navigate("/articles/modify")}>Modify</button>
+                        <button className="modify" onClick={()=> navigate(`/articles/${article.id}/modify`)}>Modify</button>
                         {deleteButton(article)}
                         
-                        </div>
+                    </div>
                 
                     :<div className="article-each" key={article.id}>
                         <h3 className="header">Article</h3> 
