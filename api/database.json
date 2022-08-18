@@ -131,13 +131,6 @@
       "name": "Hotdog Festival",
       "dateOf": "06/08/23",
       "location": "Pullman Square"
-    },
-    {
-      "userId": 3,
-      "name": "Halloween Party",
-      "dateOf": "10/31/2022",
-      "location": "123 Spooky Street",
-      "id": 5
     }
   ],
   "messages": [
