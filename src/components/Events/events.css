@@ -1,0 +1,40 @@
+body,
+button,
+input,
+select,
+textarea {
+  color: #404040;
+  font-family: "Comfortaa", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.events {
+    display: flex;
+    flex-direction: column;
+}
+.event-list li {
+    list-style: none;
+}
+.event-list li:first-child>.event {
+    background-color: rgb(183, 216, 213);
+    border: 1px dashed rgb(69, 51, 168);
+    font-weight: bold;
+    padding: 2rem;
+}
+.event-list li:first-child>.event h3 {
+    font-size: xx-large;
+}
+.event {
+    background-color: rgb(211, 226, 192);
+    border: 1px dotted rgb(110, 57, 180);
+    padding: 0.7rem;
+    margin: 0.5rem;
+}
+.event__footer {
+    border-top: 1px dotted rgb(110, 57, 180);
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}

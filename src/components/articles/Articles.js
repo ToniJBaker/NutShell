@@ -25,7 +25,7 @@ const deleteButton = (article) => {
     if(nutshellUserObject.id === article.userId){
         return <button onClick={()=>{
             
-            fetchArticles(`/${article.id}`, deleteOption())
+            fetchArticles(`/${article.id}`, deleteOption()) //fetch call with DELETE option
             .then (()=>{
                 fetchArticles( )
                     .then((articlesData)=> {
@@ -41,6 +41,7 @@ const deleteButton = (article) => {
 return (<>
     <h2>Articles</h2>
         <section className="articles">
+            
             {
             articles.map((article)=> ( //articles display: title, url, synopsis...  with modify & delete button if belong to current user.
             
@@ -52,10 +53,10 @@ return (<>
                         <p className="card-url">URL:  {article.url}</p>
                         <p className="card-synopsis">Synopsis:  {article.synopsis}</p>
                         {/* <p className="card-time">Time Stamp:  {article.timestamp}</p> */}
-                        <button className="modify">Modify</button>
+                        <button className="modify" onClick={()=> navigate(`/articles/${article.id}/modify`)}>Modify</button>
                         {deleteButton(article)}
                         
-                        </div>
+                    </div>
                 
                     :<div className="article-each" key={article.id}>
                         <h3 className="header">Article</h3> 

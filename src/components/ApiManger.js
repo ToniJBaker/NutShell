@@ -40,6 +40,9 @@ export const postOption = (bodyContent) => {
 
 }
 
+export const getLoggedInUser = () => {
+  return {...JSON.parse(localStorage.getItem("nutshell_user"))}
+}
 export const putOption = (bodyContent) => {
 
     const put = {
