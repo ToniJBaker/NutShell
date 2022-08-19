@@ -26,6 +26,7 @@ export const ApplicationViews = () => {
 
                 <Route path="/events" element={ <Events /> } />
                 <Route path="/event/create" element={ <EventForm /> } />
+                <Route path="/events/:eventId/edit" element={ <EventForm /> } />
                 <Route path="/articles" element={ <Articles/> } />
                 <Route path="/articles/create" element={ <CreateArticle/>} /> 
                 <Route path="/articles/:articleId/modify" element={ <ModifyArticle/>} />
