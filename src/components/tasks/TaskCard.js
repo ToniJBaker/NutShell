@@ -1,6 +1,9 @@
 import { useState } from "react"
 import { fetchTasks, putOption } from "../ApiManger"
 
+//Component module returns task card with the ability to PUT inline edit description and mark as completed 
+//Authored by Shane Butler
+
 export const TaskCard = ({ task, getTasks }) => {
 
     //Function to add checkbox PUT functionality to property "completed"
@@ -53,6 +56,7 @@ export const TaskCard = ({ task, getTasks }) => {
         )
     }
 
+    //Return conditionally renders incomplete tasks and inline edit form call with nested ternary
     return (
         !task.completed ?
             isEdit ?

@@ -4,7 +4,7 @@ import { TaskCard } from "./TaskCard.js"
 import { TaskForm } from "./TaskForm.js"
 import "./Tasks.css"
 
-//Component module displays list of tasks and relevant links to create or modify tasks.
+//Component module fetches tasks and passes props to returned component children, TaskCard and TaskForm
 //Authored by Shane Butler
 
 export const TaskList = () => {
