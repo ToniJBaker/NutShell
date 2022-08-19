@@ -46,8 +46,8 @@ export const Events = () => {
     const sortedEvents = useMemo(() => [...events].sort(eventSort), [events])
 
     return <>
-            <button onClick={() => navigate("/event/create")}>Add Event</button>
             <h2 className="event-list__header">Events</h2>
+            <button onClick={() => navigate("/event/create")}>Add Event</button>
             <ul className="event-list">
             {sortedEvents.map((event) => <li key={`app-event--${event.id}`}><AppEvent event={event} /></li>)}
             </ul>

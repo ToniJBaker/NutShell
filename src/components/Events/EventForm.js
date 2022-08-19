@@ -6,29 +6,25 @@
  * 
  */
 
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { fetchEvents, getLoggedInUser, postOption } from "../ApiManger"
+import { useEffect, useState } from "react"
+import { useLocation, useNavigate } from "react-router-dom"
+import { fetchEvents, getLoggedInUser, postOption, putOption } from "../ApiManger"
 
 
 
-export const EventForm = (edit) => {
+export const EventForm = ({props}) => {
     const [appEvent, update] = useState({
         userId: getLoggedInUser().id,
         name: "",
-        dateOf: "Year-Month-Day",
+        dateOf: "",
         location: ""
     })
 
     const navigate = useNavigate()
+    const existingEvent = useLocation().state
 
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
-
-        // const now = new Date()
-        // const month = now.getMonth() + 1
-        // const day = now.getDate()
-        // const year = now.getFullYear()
 
         const eventToSendtoAPI = {
             userId: getLoggedInUser().id,
@@ -36,31 +32,50 @@ export const EventForm = (edit) => {
             dateOf: appEvent.dateOf,
             location: appEvent.location
         }
-
-        fetchEvents("",postOption(eventToSendtoAPI))
-        .then( () => {
-            navigate("/events")
-        })
+        if (!existingEvent) {
+            fetchEvents("",postOption(eventToSendtoAPI))
+            .then( () => {
+                navigate("/events")
+            })
+        } else {
+            fetchEvents(`/${appEvent.id}`,putOption(eventToSendtoAPI))
+            .then( () => {
+                navigate("/events")
+            })
+        }
     }
 
     const convertDateFormat = (dateString, outFormat) => {
 
-        
         if (outFormat === "slash") {
             const splitDate = dateString.split("-")
+            if (splitDate.length === 1) return dateString
             return splitDate[1] + "/" + splitDate[2] + "/" + splitDate[0]
         }
         if (outFormat === "dash") {
             const splitDate = dateString.split("/")
+            if (splitDate.length === 1) return dateString
+            if (parseInt(splitDate[2]) < 100) splitDate[2] = "20" + splitDate[2]
             return splitDate[2] + "-" + splitDate[0] + "-" + splitDate[1]
         }
         return dateString
         
     }
 
+
+    useEffect(
+        () => {
+            if (existingEvent) {
+                update(existingEvent)
+            }
+        },
+        []
+    )
+
+
     return (
         <form className="eventForm">
-            <h2 className="eventForm__title">New Event</h2>
+            <h2 className="eventForm__title">{existingEvent ? "Edit Event":"New Event"}</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="description">Event name:</label>
@@ -113,7 +128,7 @@ export const EventForm = (edit) => {
             <button 
                 onClick={ (clickEvent) => handleSaveButtonClick(clickEvent) }
                 className="btn btn-primary">
-                Add Event
+                {existingEvent ? "Save Changes":"Add Event"}
             </button>
         </form>
     )
