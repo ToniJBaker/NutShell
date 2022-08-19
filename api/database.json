@@ -63,6 +63,13 @@
       "description": "Change CD-ROM",
       "expectedDate": "2022-10-17T00:00:00.000Z",
       "completed": false
+    },
+    {
+      "description": "Prepare pumpkin catching device",
+      "expectedDate": "2022-09-29T00:00:00.000Z",
+      "userId": 1,
+      "completed": false,
+      "id": 7
     }
   ],
   "articles": [
