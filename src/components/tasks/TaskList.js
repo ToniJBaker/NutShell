@@ -39,11 +39,13 @@ export const TaskList = () => {
     }
 
     return (
-        <article className="tasks">
+        <>
             <h2>Tasks</h2>
-            <button className="tasks__new--button" onClick={() => toggleTaskForm(showTaskForm)}>{showTaskForm ? "Hide Form" : "New Task"}</button>
-            {showTaskForm ? <TaskForm localUserId={nutshellUserObject.id} getTasks={fetchAllTasks} /> : null}
-            {tasks.map(task => <TaskCard key={task.id} task={task} getTasks={fetchAllTasks} />)}
-        </article>
+            <article className="tasks">
+                <button className="tasks__new--button" onClick={() => toggleTaskForm(showTaskForm)}>{showTaskForm ? "Hide Form" : "New Task"}</button>
+                {showTaskForm ? <TaskForm localUserId={nutshellUserObject.id} getTasks={fetchAllTasks} /> : null}
+                {tasks.map(task => <TaskCard key={task.id} task={task} getTasks={fetchAllTasks} />)}
+            </article>
+        </>
     )
 }

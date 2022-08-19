@@ -4,6 +4,7 @@ import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { Navbar } from "./nav/Navbar"
 import { Authorized} from "./views/Authorized"
+import "./Nutshell.css"
 
 
 export const Nutshell = () => {

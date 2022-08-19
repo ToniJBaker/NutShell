@@ -1,6 +1,7 @@
 .tasks {
     display: flex;
     flex-direction: column;
+    width: 325px;
 }
 
 .tasks__header {
@@ -45,12 +46,6 @@
 }
 
 .tasks__new--button {
-    width: 30%;
     height: 1.75rem;
-}
-
-.task__delete--button {
-    margin-top: .3rem;
-    background-color: rgb(175, 49, 49);
-    color: bisque;
+    width: 100px;
 }
