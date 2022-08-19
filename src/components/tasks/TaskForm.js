@@ -45,6 +45,7 @@ export const TaskForm = (props) => {
         }
     }
 
+//Form with inputs being set to state
     return (
         <form className="task-form">
             <fieldset>
