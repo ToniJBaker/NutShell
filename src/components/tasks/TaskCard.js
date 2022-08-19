@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { fetchTasks, putOption } from "../ApiManger"
 
 export const TaskCard = ({ task, getTasks }) => {
@@ -27,15 +28,49 @@ export const TaskCard = ({ task, getTasks }) => {
 
     }
 
+    //Set state variables for use inline edit
+    const [isEdit, setIsEdit] = useState(false)
+    const [taskUpdate, setTaskUpdate] = useState(task)
+
+    //Inline form with fetch PUT for user input. Called when user clicks task description via isEdit ternary.
+    const inlineForm = () => {
+        return (
+            <form onSubmit={(e) => {
+                e.preventDefault()
+                return fetchTasks(`/${task.id}`, putOption(taskUpdate))
+                    .then(setIsEdit(false))
+                    .then(getTasks)
+            }}>
+                <input className="task__edit"
+                    value={taskUpdate.description}
+                    onChange={(e) => {
+                        const taskEdit = { ...taskUpdate }
+                        taskEdit.description = e.target.value
+                        delete taskEdit.user
+                        setTaskUpdate(taskEdit)
+                    }} />
+            </form>
+        )
+    }
+
     return (
         !task.completed ?
-            <section className="task" key={`task--${task.id}`}>
-                <div className="task__header">
-                    <input onChange={(e) => setComplete(e, task)} type="checkbox" />
-                    <div className="task__description">{task.description}</div>
-                </div>
-                <div className="task__date">Complete by: {parseIsoDate(task.expectedDate)}</div>
-            </section>
+            isEdit ?
+                <section className="task" key={`task--${task.id}`}>
+                    <div className="task__header">
+                        <input className="task__checkbox" onChange={(e) => setComplete(e, task)} type="checkbox" />
+                        {inlineForm()}
+                    </div>
+                    <div className="task__date">Complete by: {parseIsoDate(task.expectedDate)}</div>
+                </section>
+                :
+                <section className="task" key={`task--${task.id}`}>
+                    <div className="task__header">
+                        <input className="task__checkbox" onChange={(e) => setComplete(e, task)} type="checkbox" />
+                        <div onClick={() => setIsEdit(true)} className="task__description">{task.description}</div>
+                    </div>
+                    <div className="task__date">Complete by: {parseIsoDate(task.expectedDate)}</div>
+                </section>
             : null
     )
 }

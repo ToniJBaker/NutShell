@@ -18,12 +18,30 @@
 }
 
 .task__header {
+    display: flex;
     font-size: 1.1em;
+    padding-bottom: 5px;
+}
+
+.task__checkbox {
+    margin-right: 5px;
 }
 
 .task__description {
     display: inline;
     font-weight: 600;
+}
+
+.task__description:hover {
+    color: orangered;
+ }
+
+.task__date {
+    margin-left: 3px;
+}
+
+.task__edit {
+    width: 150%;
 }
 
 .tasks__new--button {
