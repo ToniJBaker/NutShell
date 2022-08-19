@@ -6,13 +6,14 @@ import "./Navbar.css"
 
 export const Navbar = () => {
     const navigate = useNavigate()
-    const localNutshellUser = localStorage.getItem("nutshell_user")
-    const nutshellUserObject = JSON.parse(localNutshellUser)  
 
     return (
         <ul className="navbar">
+            <li className="navbar__item active" id="navbar__title">
+                Nutshell
+            </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/">Home</Link>
+                <Link className="navbar__link" to="/tasks">Tasks</Link>
             </li>
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/articles">Articles</Link>

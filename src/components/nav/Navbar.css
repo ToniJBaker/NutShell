@@ -1,14 +1,22 @@
 .navbar {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: left;
+    justify-content: space-between;
+    margin-top: 25px;
+    align-items: baseline;
+    padding: 0;
 }
 
 .navbar__item {
-    flex-basis: 20%;
     list-style-type: none;
 }
 
-.navbar__logout {
-    margin-left: auto;
+.navbar__item a:link {
+    text-decoration: none;
+}
+
+#navbar__title {
+    display: inline;
+    font-size: 1.5em;
+    font-weight: 500;
 }

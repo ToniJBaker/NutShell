@@ -1,9 +1,3 @@
-h2 {
-    text-align:center;
-    font-size:55px;
-    background-color:#ea952e;
-    height:86px;
-}
 .articles {
     display:flex;
     flex-wrap: wrap;
@@ -27,8 +21,4 @@ h2 {
     border: 5px solid black;
     padding: .5em;
     transform:translatex(1013px) translatey(0px);
-}
-button {
-    margin: 5px;
-    
 }

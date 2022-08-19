@@ -1,0 +1,26 @@
+body,
+button,
+input,
+select,
+textarea {
+  color: #404040;
+  font-family: "Comfortaa", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+body {
+    align-items: center;
+    width: 80vw;
+    height: 80vh;
+    max-width: 1080px;
+    margin: auto;
+    min-width: 325px;
+}
+
+h2 {
+    text-align:center;
+    font-size: 3em;
+    background-color:#ea952e;
+    padding: 5px;
+}
