@@ -14,19 +14,31 @@ Modular code<br>
 Relational data<br>
 
 # Nutshell UI
+## Usage
 Below are some helpful images of nutshell, and best uses the application.
 A base profile has been loaded into the login page for quick and simple demonstration.
+Nutshell is comprised of four main sections:<br>
+
+1) Tasks<br>
+2) Articles<br>
+3) Events<br>
+4) Messages<br>
 
 ![Screenshot (9)](https://user-images.githubusercontent.com/106984214/196306002-7c59f0fe-dfda-43a1-a955-fc85c0aa8a77.png)
 Once logged in, a user is able to use the top navigation to move to: Tasks, Articles, Events or Messages.
-## Tasks
+## 1) Tasks
 A user can add new tasks to the list by completing a new task form.  The new task will be populated to the list in order asending order by date. When a task is complete, the user can check the box and the task will be deleted from the list.
 ![Screenshot (10)](https://user-images.githubusercontent.com/106984214/196305468-d10a05c7-a784-4474-8854-6580a910c16f.png)
-## Articles
+## 2) Articles
+A user can add new articles to post.  Only the current user will have the option to modify or delete an article.
 ![Screenshot (11)](https://user-images.githubusercontent.com/106984214/196305480-b2d52fd8-711d-4240-bc71-8e599ac454a9.png)
 ![Screenshot (12)](https://user-images.githubusercontent.com/106984214/196305491-6d9a631a-a373-4d9d-9b49-d2ae7a791baf.png)
+## 3) Events
+A user can add future events, tracking the event title, location and date.
 ![Screenshot (13)](https://user-images.githubusercontent.com/106984214/196305504-1e44fc3b-4422-4ecb-b933-fcb166350cbe.png)
 ![Screenshot (14)](https://user-images.githubusercontent.com/106984214/196305511-e44672e3-5264-4a3f-9c48-40c65f8604e2.png)
+## 4) Messages
+A user can post new messages to the chat.
 ![Screenshot (15)](https://user-images.githubusercontent.com/106984214/196305521-b1ecd304-9d83-4088-bb2c-7a07c7a0fdc6.png)
 
 # ERD
